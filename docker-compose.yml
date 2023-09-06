@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+    database:
+        container_name: mysql
+        image: mysql:latest
+        volumes:
+            - local:/var/lib/mysql
+            - ./docker/mysql/database:/docker-entrypoint-initdb.d
+        ports:
+            - "3306:3306"
+        restart: unless-stopped
+        networks:
+            - default
+        environment:
+            MYSQL_DATABASE: ${DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    app:
+        container_name: app
+        build:
+            context: .
+            dockerfile: ./docker/django/Dockerfile
+        volumes:
+            - .:/app
+        command:
+            - /bin/sh
+            - -c
+#            - "python manage.py makemigrations"
+#            - "python manage.py migrate"
+            - "python manage.py runserver 0.0.0.0:8000"
+        ports:
+            - "8000:8000"
+#        restart: unless-stopped
+        env_file:
+            -   ./.env
+        networks:
+            - default
+        depends_on:
+            - database
+volumes:
+    local:
+        driver: local
+networks:
+    default:
+        driver: bridge
