@@ -1,0 +1,4 @@
+mysqlclient
+Django
+python-dotenv
+django-bootstrap-v5
