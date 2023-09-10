@@ -1,0 +1,224 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block title %}<title>Homepage</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="{% static 'user_layout/css/b612_mono_cabin.css' %}" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'user_layout/fonts/icomoon/style.css' %}">
+
+  <link rel="stylesheet" href="{% static 'user_layout/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'user_layout/css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'user_layout/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'user_layout/css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'user_layout/css/owl.theme.default.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'user_layout/css/jquery.fancybox.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'user_layout/css/bootstrap-datepicker.css' %}">
+
+  <link rel="stylesheet" href="{% static 'user_layout/css/avatar-dropdown.css' %}">
+
+  <link rel="stylesheet" href="{% static 'user_layout/fonts/flaticon/font/flaticon.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'user_layout/css/aos.css' %}">
+  <link href="{% static 'user_layout/css/jquery.mb.YTPlayer.min.css' %}" media="all" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="{% static 'user_layout/css/style.css' %}">
+
+
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    
+    <div class="header-top">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-6 d-flex">
+            <a href="index.html" class="site-logo">
+              {% trans "website-title" %}
+            </a>
+
+            <a href="#" class="ml-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
+                class="icon-menu h3"></span></a>
+
+          </div>
+          <div class="col-12 col-lg-6 ml-auto d-flex">
+            <div class="ml-md-auto top-social d-none d-lg-inline-block">
+                <a href="#" class="d-inline-block p-3"><span class="icon-pencil"></span></a>
+                <a href="#" class="d-inline-block p-3"><span class="icon-bell"></span></a>
+            </div>
+            <form action="#" class="search-form d-inline-block">
+
+              <div class="d-flex">
+                <input type="email" class="form-control" placeholder="Search...">
+                <button type="submit" class="btn btn-secondary" ><span class="icon-search"></span></button>
+              </div>
+            </form>
+            
+            <!-- Start add avatar dropdown next to form -->
+
+            
+              <div class="avatar-dropdown-user-menu-wrap">
+  
+                <a class="avatar-dropdown-mini-photo-wrapper" href="#"><span class="icon-user-circle" style="font-size: 35px"></span></a>
+               
+                
+                <div class="avatar-dropdown-menu-container">
+                  <ul class="avatar-dropdown-user-menu">
+                    <div class="avatar-dropdown-profile-highlight">
+                      <img src="{% static 'user_layout/images/avatar-logo.jpg' %}" alt="profile-img" width=36 height=36>
+                      <div class="avatar-dropdown-details">
+                        <div id="avatar-dropdown-profile-name">{% trans "User's name" %}</div>
+                        <div id="avatar-dropdown-profile-footer">{% trans "User's email" %}</div>
+                      </div>
+                    </div>
+                    <li class="avatar-dropdown-user-menu__item">
+                      <a class="avatar-dropdown-user-menu-link" href="#">
+                        <span class="icon-bookmark" style="font-size: 25px"></span>
+                        <div>{% trans "Bookmark" %}</div>
+                      </a>
+                    </li>
+                    <li class="avatar-dropdown-user-menu__item">
+                      <a class="avatar-dropdown-user-menu-link" href="#">
+                        <span class="icon-users" style="font-size: 25px"></span>
+                        <div>{% trans "Follow" %}</div>
+                      </a>
+                    </li>
+                    <li class="avatar-dropdown-user-menu__item">
+                      <a class="avatar-dropdown-user-menu-link" href="#">
+                        <span class="icon-file-text-o" style="font-size: 25px"></span>
+                        <div>{% trans "Draft" %}</div>
+                      </a>
+                    </li>
+                    <div class="avatar-dropdown-footer">
+                      <li class="avatar-dropdown-user-menu__item"><a class="avatar-dropdown-user-menu-link" href="#" style="color: #F44336;">{% trans "Logout" %}</a></li>
+                      <li class="avatar-dropdown-user-menu__item"><a class="avatar-dropdown-user-menu-link" href="#">{% trans "Settings" %}</a></li>
+                    </div>
+                  </ul>
+                </div>
+              </div>  
+            
+            
+            <!-- End add avatar dropdown -->
+          </div>
+          <div class="col-6 d-block d-lg-none text-right">
+            
+          </div>
+        </div>
+      </div>
+      
+
+
+      
+      <div class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block" role="banner">
+
+      <div class="container">
+        <div class="d-flex align-items-center">
+          
+          <div class="mr-auto">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
+                <li class="active">
+                  <a href="index.html" class="nav-link text-left">{% trans "Home" %}</a>
+                </li>
+                <li>
+                  <a href="categories.html" class="nav-link text-left">{% trans "All categories" %}</a>
+                </li>
+                <li>
+                  <a href="categories.html" class="nav-link text-left">{% trans "Category 1" %}</a>
+                </li>
+                <li>
+                  <a href="categories.html" class="nav-link text-left">{% trans "Category 2" %}</a>
+                </li>
+                <li>
+                    <a href="categories.html" class="nav-link text-left">{% trans "Category 3" %}</a>
+                </li>
+                <li><a href="categories.html" class="nav-link text-left">{% trans "Category 4" %}</a></li>
+                <li>
+                  <a href="categories.html" class="nav-link text-left">{% trans "Category 5" %}</a>
+                </li>
+                <li><a href="contact.html" class="nav-link text-left">{% trans "Contact" %}</a></li>
+              </ul>                                                                                                                                                                                                                                                                                         
+            </nav>
+
+          </div>
+         
+        </div>
+      </div>
+
+    </div>
+    
+    </div>
+
+    {% block content %}{% endblock %}
+    
+    <div class="footer">
+      <div class="container">
+        
+
+        <div class="row">
+          <div class="col-12">
+            <div class="ml-md-auto top-social d-none d-lg-inline-block">
+                <a href="#" class="d-inline-block p-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="d-inline-block p-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="d-inline-block p-3"><span class="icon-instagram"></span></a>
+            </div>
+            <div class="copyright">
+                <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved <i aria-hidden="true"></i> by <a href="#" target="_blank" >Shah Fazle Elahi</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+  <!-- .site-wrap -->
+
+
+  <!-- loader -->
+  <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#ff5e15"/></svg></div>
+
+<script src="{% static 'user_layout/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'user_layout/js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'user_layout/js/jquery-ui.js' %}"></script>
+<script src="{% static 'user_layout/js/popper.min.js' %}"></script>
+<script src="{% static 'user_layout/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'user_layout/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'user_layout/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'user_layout/js/jquery.countdown.min.js' %}"></script>
+<script src="{% static 'user_layout/js/bootstrap-datepicker.min.js' %}"></script>
+<script src="{% static 'user_layout/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'user_layout/js/aos.js' %}"></script>
+<script src="{% static 'user_layout/js/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'user_layout/js/jquery.sticky.js' %}"></script>
+<script src="{% static 'user_layout/js/jquery.mb.YTPlayer.min.js' %}"></script>
+<script src="{% static 'user_layout/js/avatar-dropdown.js' %}"></script>
+
+
+
+
+  <script src="{% static 'user_layout/js/main.js' %}"></script>
+
+</body>
+
+</html>
