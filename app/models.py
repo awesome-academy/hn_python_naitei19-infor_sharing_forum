@@ -1,9 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 from django.contrib.auth.models import AbstractUser
-
-from info_sharing_forum import settings
-
+from django.utils.translation import gettext_lazy as _
 
 class CustomUser(AbstractUser):
     """
@@ -62,10 +60,10 @@ class Post(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     categories = models.ManyToManyField('Category')
-    hashtags = models.ManyToManyField('HashTag')
-    content = models.CharField(max_length=10000)
-    mode = models.IntegerField(default=0, choices=((0, 'Public'), (1, 'Private')))
-    status = models.IntegerField(default=0, choices=((0, 'Draft'), (1, 'Normal'), (2, 'Deleted'), (3, 'Banned')))
+    hashtags = models.ManyToManyField('HashTag', blank=True, null=True)
+    content = RichTextField()
+    mode = models.IntegerField(default=0, choices=((0, _('Public')), (1, _('Private'))))
+    status = models.IntegerField(default=0, choices=((0, _('Draft')), (1, _('Normal')), (2, _('Deleted')), (3, _('Banned'))))
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     view_count = models.FloatField(default=0)
@@ -142,7 +140,7 @@ class ReportPost(models.Model):
     reported_post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='reported_post')
     reason = models.CharField(max_length=1024)
     time = models.DateTimeField(auto_now_add=True)
-    is_resolved = models.BooleanField(default=False, choices=((True, 'Resolved'), (False, 'Not resolved')))
+    is_resolved = models.BooleanField(default=False, choices=((True, _('Resolved')), (False, _('Not resolved'))))
 
     def __str__(self):
         """

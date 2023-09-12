@@ -1,0 +1,73 @@
+{% extends "base_generic.html" %}
+{% load static i18n %}
+
+{% block content %}
+
+{% block header %}
+{% include "header.html" %}
+{% endblock %}
+
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<link rel="stylesheet" href="{% static 'user_layout/css/tagsinput.css' %}">
+
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{% trans "Create Post" %}</h2>
+            <form method="POST" action="{% url 'create_post' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group mb-3">
+                    {{ form.title }}
+                </div>
+                <div class="form-group">
+                    {{ form.categories }} {{ form.mode }}
+                </div>
+                <div class="form-group">
+                    <textarea name="content" id="content" cols="30" rows="10" required></textarea>
+                    <script>
+                        var editor = CKEDITOR.replace('content', {
+                            extraPlugins: 'notification'
+                        });
+                        // config CKEditor
+                        CKEDITOR.config.height = 300;
+                        CKEDITOR.config.width = 'auto';
+                        CKEDITOR.config.toolbar = [
+                            ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
+                            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'],
+                            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+                            ['Link', 'Unlink'],
+                            ['Image', 'Table', 'HorizontalRule', 'SpecialChar'],
+                            ['Format', 'Font', 'FontSize'],
+                            ['TextColor', 'BGColor'],
+                            ['Maximize', 'ShowBlocks', '-', 'Source']
+                        ];
+                        // placeholder
+                        CKEDITOR.config.editorplaceholder = '{% trans "Nội dung bài viết" %} (*)';
+                        // required
+                        editor.on('required', function (evt) {
+                            editor.showNotification('{% trans "Nội dung bài viết không được để trống" %}', 'warning');
+                            evt.cancel();
+                        });
+                    </script>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" name="hashtags" id="hashtags" class="form-control" data-role="tagsinput"
+                           placeholder="{% trans 'Thêm hashtag' %}">
+                </div>
+                <input type="submit" class="btn btn-primary" value="{% trans 'Create' %}">
+                <a href="{% url 'home' %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+
+{% endblock %}

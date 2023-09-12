@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-12 11:24+0700\n"
+"POT-Creation-Date: 2023-09-12 22:36+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,13 +16,70 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\app\models.py:65
+msgid "Public"
+msgstr "Công khai"
+
+#: .\app\models.py:65
+msgid "Private"
+msgstr "Trả phí"
+
+#: .\app\models.py:66 .\app\templates\header.html:59
+msgid "Draft"
+msgstr "Bản nháp"
+
+#: .\app\models.py:66
+msgid "Normal"
+msgstr "Bình thường"
+
+#: .\app\models.py:66
+msgid "Deleted"
+msgstr "Đã xóa"
+
+#: .\app\models.py:66
+msgid "Banned"
+msgstr "Đã cấm"
+
+#: .\app\models.py:143
+msgid "Resolved"
+msgstr "Đã giải quyết"
+
+#: .\app\models.py:143
+msgid "Not resolved"
+msgstr "Chưa giải quyết"
+
 #: .\app\templates\base_generic.html:6
 msgid "Web title"
-msgstr "Web title"
+msgstr "BIẾT TUỐT"
+
+#: .\app\templates\create_post.html:21
+msgid "Create Post"
+msgstr "Tạo bài viết mới"
+
+#: .\app\templates\create_post.html:50
+msgid "Nội dung bài viết"
+msgstr "Nội dung bài viết"
+
+#: .\app\templates\create_post.html:53
+msgid "Nội dung bài viết không được để trống"
+msgstr "Nội dung bài viết không được để trống"
+
+#: .\app\templates\create_post.html:60
+msgid "Thêm hashtag"
+msgstr "Thêm hashtag (Nhấn Enter để thêm hashtag mới)"
+
+#: .\app\templates\create_post.html:62
+msgid "Create"
+msgstr "Tạo"
+
+#: .\app\templates\create_post.html:63
+msgid "Cancel"
+msgstr "Hủy"
 
 #: .\app\templates\header.html:8
 msgid "website-title"
-msgstr "website-title"
+msgstr "BIẾT TUỐT"
 
 #: .\app\templates\header.html:40
 msgid "User's name"
@@ -31,23 +87,23 @@ msgstr "User's name"
 
 #: .\app\templates\header.html:41
 msgid "User's email"
-msgstr "User's email"
+msgstr "User's name"
 
 #: .\app\templates\header.html:47
 msgid "Bookmark"
-msgstr "Bookmark"
+msgstr "Đánh dấu"
 
 #: .\app\templates\header.html:53
 msgid "Follow"
-msgstr "Follow"
-
-#: .\app\templates\header.html:59
-msgid "Draft"
-msgstr "Draft"
+msgstr "Theo dõi"
 
 #: .\app\templates\header.html:64
 msgid "Logout"
-msgstr "Logout"
+msgstr "Đăng xuất"
+
+#: .\app\templates\header.html:66
+msgid "Settings"
+msgstr "Cài đặt"
 
 #: .\app\templates\home.html:22 .\app\templates\home.html:40
 #: .\app\templates\home.html:65
@@ -67,7 +123,7 @@ msgstr "Editor's Pick"
 #: .\app\templates\home.html:332 .\app\templates\home.html:343
 #: .\app\templates\home.html:354 .\app\templates\home.html:365
 msgid "Blog's title"
-msgstr "Blog's title"
+msgstr "Tiêu đề bài viết"
 
 #: .\app\templates\home.html:24 .\app\templates\home.html:42
 #: .\app\templates\home.html:74 .\app\templates\home.html:183
@@ -77,7 +133,7 @@ msgstr "Blog's title"
 #: .\app\templates\home.html:291 .\app\templates\home.html:303
 #: .\app\templates\home.html:316
 msgid "Blog's introduciton"
-msgstr "Blog's introduciton"
+msgstr "Giới thiệu bài viết"
 
 #: .\app\templates\home.html:27 .\app\templates\home.html:45
 #: .\app\templates\home.html:76 .\app\templates\home.html:87
@@ -92,11 +148,11 @@ msgstr "Blog's introduciton"
 #: .\app\templates\home.html:334 .\app\templates\home.html:345
 #: .\app\templates\home.html:356 .\app\templates\home.html:367
 msgid "Blog's author"
-msgstr "Blog's author"
+msgstr "Tác giả bài viết"
 
 #: .\app\templates\home.html:28 .\app\templates\home.html:46
 msgid "Blog's date"
-msgstr "Blog's date"
+msgstr "Ngày đăng bài viết"
 
 #: .\app\templates\home.html:28 .\app\templates\home.html:46
 #: .\app\templates\home.html:77 .\app\templates\home.html:88
@@ -111,15 +167,15 @@ msgstr "Blog's date"
 #: .\app\templates\home.html:335 .\app\templates\home.html:346
 #: .\app\templates\home.html:357 .\app\templates\home.html:368
 msgid "Blog's estimated read time"
-msgstr "Blog's estimated read time"
+msgstr "Thời gian đọc bài viết"
 
 #: .\app\templates\home.html:119
 msgid "Trending"
-msgstr "Trending"
+msgstr "Xu hướng"
 
 #: .\app\templates\home.html:167
 msgid "See All Trends"
-msgstr "See All Trends"
+msgstr "Xem tất cả xu hướng"
 
 #: .\app\templates\home.html:200 .\app\templates\navbar.html:18
 msgid "Category 1"
@@ -131,23 +187,23 @@ msgstr "Category 2"
 
 #: .\app\templates\home.html:285
 msgid "Recent News"
-msgstr "Recent News"
+msgstr "Bài viết gần đây"
 
 #: .\app\templates\home.html:326
 msgid "Popular Posts"
-msgstr "Popular Posts"
+msgstr "Bài viết phổ biến"
 
 #: .\app\templates\home.html:374
 msgid "See All Popular"
-msgstr "See All Popular"
+msgstr "Xem tất cả bài viết phổ biến"
 
 #: .\app\templates\navbar.html:12
 msgid "Home"
-msgstr "Home"
+msgstr "Trang chủ"
 
 #: .\app\templates\navbar.html:15
 msgid "All categories"
-msgstr "All categories"
+msgstr "Tất cả danh mục"
 
 #: .\app\templates\navbar.html:24
 msgid "Category 3"
@@ -163,4 +219,4 @@ msgstr "Category 5"
 
 #: .\app\templates\navbar.html:30
 msgid "Contact"
-msgstr "Contact"
+msgstr "Liên hệ"

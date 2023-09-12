@@ -338,3 +338,15 @@ jQuery(document).ready(function($) {
 	});
 
 });
+
+(function($) {
+
+	"use strict";
+
+	 $(document).ready(function() {
+        $('#id_categories').multiselect({
+          includeSelectAllOption: true,
+        });
+    });
+
+})(jQuery);

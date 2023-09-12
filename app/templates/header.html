@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-lg-6 d-flex">
-                <a href="index.html" class="site-logo">
+                <a href="{% url 'home'%}" class="site-logo">
                     {% trans "website-title" %}
                 </a>
 
@@ -14,7 +14,7 @@
             </div>
             <div class="col-12 col-lg-6 ml-auto d-flex">
                 <div class="ml-md-auto top-social d-none d-lg-inline-block">
-                    <a href="#" class="d-inline-block p-3"><span class="icon-pencil"></span></a>
+                    <a href="{% url 'create_post'%}" class="d-inline-block p-3"><span class="icon-pencil"></span></a>
                     <a href="#" class="d-inline-block p-3"><span class="icon-bell"></span></a>
                 </div>
                 <form action="#" class="search-form d-inline-block">
@@ -63,8 +63,7 @@
                                 <li class="avatar-dropdown-user-menu__item"><a class="avatar-dropdown-user-menu-link"
                                         href="#" style="color: #F44336;">{% trans "Logout" %}</a></li>
                                 <li class="avatar-dropdown-user-menu__item"><a class="avatar-dropdown-user-menu-link"
-                                        href="#">{%
-                                        trans "Settings" %}</a></li>
+                                        href="#">{% trans "Settings" %}</a></li>
                             </div>
                         </ul>
                     </div>

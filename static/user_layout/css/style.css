@@ -881,12 +881,6 @@ h1, h2, h3, h4, h5,
   -webkit-box-shadow: none;
   box-shadow: none; }
 
-.btn {
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: .2rem;
-  font-family: "Cabin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
-
 .quote-form-wrap {
   background: #09162a;
   padding: 5rem; }
@@ -1295,3 +1289,15 @@ h1, h2, h3, h4, h5,
 
 .single-content {
   font-size: .9rem; }
+
+ul[class^="multiselect-container"]{
+  margin-top: 5px;
+}
+
+ul[class^="multiselect-container"] li a {
+  padding: 10px 10px;
+}
+
+button[class^="multiselect"] {
+  border: 1px solid #ccc;
+}

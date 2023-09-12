@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'app.apps.AppConfig',
     'bootstrap5',
     'account.apps.AccountConfig',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +147,5 @@ AUTH_USER_MODEL = 'app.CustomUser'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+CKEDITOR_UPLOAD_PATH = "ckeditor_media"
