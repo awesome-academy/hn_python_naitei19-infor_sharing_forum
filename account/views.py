@@ -264,6 +264,9 @@ def _get_post(request, request_user, num_each_page=10):
 @login_required
 def edit_profile(request, username):
     request_user = get_user_model().objects.filter(username=username).first()
+    if request_user != request.user:
+        messages.error(request, _('Bạn không thể chỉnh sửa thông tin của người khác!'))
+        return redirect('home')
     if request_user is None:
         messages.error(request, _('Không tìm thấy tài khoản này!'))
         return redirect('home')
@@ -284,6 +287,9 @@ def edit_profile(request, username):
 @login_required
 def change_password(request, username):
     request_user = get_user_model().objects.filter(username=username).first()
+    if request_user != request.user:
+        messages.error(request, _('Bạn không thể chỉnh sửa thông tin của người khác!'))
+        return redirect('home')
     if request_user is None:
         messages.error(request, _('Không tìm thấy tài khoản này!'))
         return redirect('home')
