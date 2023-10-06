@@ -8,3 +8,4 @@ six
 django-ckeditor
 django-multiselectfield
 imgur-python
+django4-background-tasks
